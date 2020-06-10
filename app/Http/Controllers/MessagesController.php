@@ -47,11 +47,13 @@ class MessagesController extends Controller
         $request->validate([
             'title'=>'required|max:191',
             'content'=>'required|max:255',
+            'status'=>'required|max:10',
             ]);
         
         $message=new Message;
         $message->title=$request->title;
         $message->content=$request->content;
+        $message->status=$request->status;
         $message->save();
         
         return redirect('/');
@@ -99,11 +101,13 @@ class MessagesController extends Controller
         $request->validate([
             'title'=>'required|max:191',
             'content'=>'required|max:255',
+            'status'=>'required|max:10',
             ]);
             
         $message=Message::findOrfail($id);
         $message->title=$request->title;
         $message->content=$request->content;
+        $message->status=$request->status;
         $message->save();
         
         return redirect('/');

@@ -17,6 +17,10 @@
             <th>メッセージ</th>
             <td>{{ $message->content }}</td>
         </tr>
+        <tr>
+            <th>ステータス</th>
+            <td>{{ $message->status }}</td>
+        </tr>
     </table>
   
     {{-- メッセージ編集ページへのリンク --}}
